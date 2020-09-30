@@ -18,6 +18,13 @@ for( var i =0; i<=getButton.length; i++){
     });
 }
 //--------------------------------------------------------------------------------//
+document.addEventListener("touchstart", myFunction(event));
+
+function myFunction(event) {
+    makeSound(event.key);
+    buttonAnimation(event.key);
+}
+//--------------------------------------------------------------------------------//
 function makeSound(key){
   switch (key) {
     case "w":
@@ -60,5 +67,5 @@ function makeSound(key){
 //--------------------------------------------------------------------------------//
 function buttonAnimation(buttonKey){
   var button = document.querySelector("."+buttonKey).classList.remove("pressed");
-  setTimeout(function(){document.querySelector("."+buttonKey).classList.add("pressed");},200);
+  setTimeout( function(){document.querySelector("."+buttonKey).classList.add("pressed");}, 200);
 }
